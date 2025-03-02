@@ -56,8 +56,8 @@
                                     </div>
                                 </a>
                                 <!-- Audio Controls -->
-                                <div class="mt-3 pt-2 border-t border-gray-100 opacity-0 group-hover:opacity-100 transition-opacity">
-                                    <audio id="audio-surah-{{ $surah['number'] }}" class="w-full h-8" controls>
+                                <div class="mt-3 pt-2 border-t border-gray-100 opacity-0 group-hover:opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity">
+                                    <audio id="audio-surah-{{ $surah['number'] }}" class="w-full h-10 sm:h-8" controls>
                                         <source src="https://cdn.islamic.network/quran/audio-surah/128/ar.alafasy/{{ $surah['number'] }}.mp3" type="audio/mp3">
                                         Browser Anda tidak mendukung tag audio.
                                     </audio>
