@@ -26,27 +26,21 @@
             <h1 class="text-2xl font-bold text-emerald-700 mb-4">Jadwal Sholat & Imsak</h1>
             <div class="mb-4">
                 <form action="{{ route('home') }}" method="GET" class="flex flex-col md:flex-row gap-4">
+                    <!-- Input Kota -->
                     <div class="flex-1">
                         <label for="city" class="block text-sm font-medium text-gray-700 mb-1">Kota</label>
-                        <select name="city" id="city" class="w-full rounded-md border-gray-300 shadow-sm focus:border-emerald-500 focus:ring focus:ring-emerald-200">
+                        <select name="city" id="city" class="w-full rounded-md border-gray-300 shadow-sm focus:border-emerald-500 focus:ring focus:ring-emerald-200 transition duration-200">
                             @foreach($popularCities as $popularCity)
                                 <option value="{{ $popularCity }}" {{ $city === $popularCity ? 'selected' : '' }}>
                                     {{ $popularCity }}
                                 </option>
                             @endforeach
-                            <option value="other" {{ !in_array($city, $popularCities) ? 'selected' : '' }}>Kota Lain</option>
                         </select>
                     </div>
-                    <div class="flex-1 city-other-container" style="display: none;">
-                        <label for="city_other" class="block text-sm font-medium text-gray-700 mb-1">Nama Kota</label>
-                        <input type="text" name="city_other" id="city_other" class="w-full rounded-md border-gray-300 shadow-sm focus:border-emerald-500 focus:ring focus:ring-emerald-200" value="{{ !in_array($city, $popularCities) ? $city : '' }}">
-                    </div>
-                    <div class="flex-1">
-                        <label for="country" class="block text-sm font-medium text-gray-700 mb-1">Negara</label>
-                        <input type="text" name="country" id="country" class="w-full rounded-md border-gray-300 shadow-sm focus:border-emerald-500 focus:ring focus:ring-emerald-200" value="{{ $country }}">
-                    </div>
+
+                    <!-- Tombol Cari -->
                     <div class="self-end">
-                        <button type="submit" class="px-4 py-2 bg-emerald-600 text-white rounded-md hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2">
+                        <button type="submit" class="px-4 py-2 bg-emerald-600 text-white rounded-md hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 transition duration-200">
                             Cari
                         </button>
                     </div>
